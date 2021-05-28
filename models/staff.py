@@ -1,4 +1,4 @@
 class Staff:
-    def __init__(self, name, id):
+    def __init__(self, name, id=None):
         self.name = name
         self.id = id
