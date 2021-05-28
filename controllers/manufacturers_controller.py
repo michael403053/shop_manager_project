@@ -13,7 +13,7 @@ def manufacturers():
 
 
 # NEW
-@manufacturers_blueprint.route("/manufacturer/new")
+@manufacturers_blueprint.route("/manufacturers/new")
 def new_manufacturer():
     return render_template("manufacturers/new.html")
 
@@ -29,22 +29,24 @@ def create_manufacturer():
 
 
 # EDIT
-@manufacturers_blueprint.route("/manufacturer/<id>/edit")
+@manufacturers_blueprint.route("/manufacturers/<id>/edit")
 def edit_manufacturer(id):
     manufacturer = manufacturer_repository.select(id)
     return render_template('manufacturers/edit.html', manufacturer=manufacturer)
 
 
 # UPDATE
-@manufacturers_blueprint.route("/manufacturer/<id>", methods=["POST"])
-def update_zombie(id):
+@manufacturers_blueprint.route("/manufacturers/<id>", methods=["POST"])
+def update_manufacturer(id):
     name = request.form["name"]
-    manufacturer = Manufacturer(name, id)
+    contact = request.form["contact"]
+    manufacturer = Manufacturer(name, contact, id)
     manufacturer_repository.update(manufacturer)
+    return redirect('/manufacturers')
 
 
 # DELETE
-@manufacturers_blueprint.route("/manufacturer/<id>/delete", methods=["POST"])
-def delete_zombie(id):
+@manufacturers_blueprint.route("/manufacturers/<id>/delete", methods=["POST"])
+def delete_manufacturer(id):
     manufacturer_repository.delete(id)
     return redirect("/manufacturers")

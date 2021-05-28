@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Manufacturer</h2>
+
+<form action="/manufacturers/{{ manufacturer.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{manufacturer.name}}">
+    </div>
+    <div>
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" value="{{manufacturer.contact}}">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}
