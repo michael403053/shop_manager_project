@@ -28,7 +28,7 @@ CREATE TABLE reciepts (
     id SERIAL PRIMARY KEY,
     product_id INT REFERENCES products(id),
     staff_id INT REFERENCES staff(id),
-    time TIMESTAMP,
+    time_stamp VARCHAR(255),
     quantity INT
-)
+);
 

@@ -55,6 +55,6 @@ def update(product):
 #     values = [id]
 #     results = run_sql(sql, values)
 #     for result in results:
-#         staff = Staff(result["name"])
-#         staff.append(staff)
+#         new_staff = Staff(result["name"])
+#         staff.append(new_staff)
 #     return staff

@@ -20,9 +20,10 @@ def select_all():
 def select(id):
     sql = "SELECT * FROM staff WHERE id = %s"
     values = [id]
-    result = run_sql(sql,values)[0]
+    result = run_sql(sql, values)[0]
     staff = Staff(result["name"], result["id"])
     return staff
+
 
 def delete_all():
     sql = "DELETE FROM staff"

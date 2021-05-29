@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New reciept</h2>
+
+<form action="/reciepts" method="POST">
+    <div>
+        <label for="product">product:</label>
+        <select name="product_id" id="product">
+            {% for product in products %}
+            <option value="{{ product.id }}">
+                {{ product.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    
+    <div>
+        <label for="staff">staff:</label>
+        <select name="staff_id" id="staff">
+            {% for staff in staffs %}
+            <option value="{{ staff.id }}">
+                {{ staff.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    
+    <div>
+        <label for="time_stamp">Time:</label>
+        <input type="text" name="time_stamp" id="time_stamp">
+    </div>
+
+    <div>
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" id="quantity">
+    </div>
+
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

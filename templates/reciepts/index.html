@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>reciepts</h2>
+
+{% for reciept in reciepts %}
+
+<section>
+    <p>{{ reciept.product.name }} sold by {{ reciept.staff.name }}</p>
+    <p>at: {{reciept.time_stamp}}</p> 
+    <p>amount: {{reciept.quantity}}</p>
+    <a href="/reciepts/{{ reciept.id }}/edit">Edit</a>
+    <form action="/reciepts/{{ reciept.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+
+{% endfor %}
+{% endblock %}
