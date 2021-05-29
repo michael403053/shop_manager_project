@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>editreciept</h2>
+
+<form action="/reciepts/{{ reciept.id }}" method="POST">
+    <div>
+        <label for="product">product:</label>
+        <select name="product_id" id="product">
+            {% for product in products %}
+            <option value="{{ product.id }}" {% if product.id == reciept.product.id %} selected {% endif %}>
+                {{ product.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    
+    <div>
+        <label for="staff">staff:</label>
+        <select name="staff_id" id="staff">
+            {% for staff in staffs %}
+            <option value="{{ staff.id }}" {% if staff.id == reciept.staff.id %} selected {% endif %}>
+                {{ staff.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    
+    <div>
+        <label for="time_stamp">Time:</label>
+        <input type="text" name="time_stamp" id="time_stamp" value="{{ reciept.time_stamp }}">
+    </div>
+
+    <div>
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" value="{{reciept.quantity}}">
+    </div>
+
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

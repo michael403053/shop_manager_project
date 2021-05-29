@@ -35,6 +35,29 @@ def create_reciept():
     reciept_repository.save(new_reciept)
     return redirect("/reciepts")
 
+# EDIT
+@reciepts_blueprint.route("/reciepts/<id>/edit")
+def edit_reciept(id):
+    reciept = reciept_repository.select(id)
+    staffs = staff_repository.select_all()
+    products = products_repository.select_all()
+    return render_template('reciepts/edit.html', reciept=reciept, staffs=staffs, products=products)
+
+
+# UPDATE
+@reciepts_blueprint.route("/reciepts/<id>", methods=["POST"])
+def update_reciept(id):
+    staff_id = request.form["staff_id"]
+    product_id = request.form["product_id"]
+    time_stamp = request.form["time_stamp"]
+    quantity = request.form["quantity"]
+    staff = staff_repository.select(staff_id)
+    product = products_repository.select(product_id)
+    reciept = Reciept(staff, product, time_stamp, quantity, id)
+    reciept_repository.update(reciept)
+    return redirect("/reciepts")
+
+
 # DELETE
 @reciepts_blueprint.route("/reciepts/<id>/delete", methods=["POST"])
 def delete_reciept(id):

@@ -13,6 +13,17 @@ def save(reciept):
     id = results[0]['id']
     reciept.id = id
 
+def select(id):
+    sql = "SELECT * FROM reciepts WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    product = products_repository.select(result["product_id"])
+    staff = staff_repository.select(result["staff_id"])
+    time_stamp = result["time_stamp"]
+    quantity = result["quantity"]
+    reciept = Reciept(product, staff, time_stamp, quantity, result["id"])
+    return reciept
+
 def select_all():
     reciepts = []
     sql = "SELECT * FROM reciepts"
@@ -27,6 +38,11 @@ def select_all():
 def delete(id):
     sql = "DELETE FROM reciepts WHERE id = %s"
     values = [id]
+    run_sql(sql, values)
+
+def update(reciept):
+    sql = "UPDATE reciepts SET (product_id, staff_id, time_stamp, quantity) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [reciept.product.id, reciept.staff.id, reciept.time_stamp, reciept.quantity, reciept.id]
     run_sql(sql, values)
 
 def delete_all():
