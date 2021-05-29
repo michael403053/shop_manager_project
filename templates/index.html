@@ -3,4 +3,12 @@
 
 This will be the home page. Depending on our UX we might have a dashboard here showing some stats for example.
 
+{%for reciept in reciepts%}
+
+<section>
+    <p>{{ (reciept.product.sell_price - reciept.product.buy_price) * reciept.quantity }}</p>
+</section>
+
+{% endfor %}
+
 {% endblock %}

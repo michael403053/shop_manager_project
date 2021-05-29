@@ -5,6 +5,7 @@ from controllers.staff_controller import staff_blueprint
 from controllers.product_controller import products_blueprint
 from controllers.reciept_controller import reciepts_blueprint
 
+
 app = Flask(__name__)
 
 app.register_blueprint(manufacturers_blueprint)

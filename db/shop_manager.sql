@@ -30,5 +30,6 @@ CREATE TABLE reciepts (
     staff_id INT REFERENCES staff(id),
     time_stamp VARCHAR(255),
     quantity INT
+    
 );
 

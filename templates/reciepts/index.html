@@ -9,6 +9,7 @@
     <p>{{ reciept.product.name }} sold by {{ reciept.staff.name }}</p>
     <p>at: {{reciept.time_stamp}}</p> 
     <p>amount: {{reciept.quantity}}</p>
+    <p>price: {{reciept.quantity * reciept.product.sell_price}}</p>
     <a href="/reciepts/{{ reciept.id }}/edit">Edit</a>
     <form action="/reciepts/{{ reciept.id }}/delete" method="POST">
         <input type="submit" value="Delete">
@@ -16,4 +17,7 @@
 </section>
 
 {% endfor %}
+<a href="/reciepts/new" class="add_new">
+<img src="static/plus.png" class="plus_logo" alt="plus">
+</a>
 {% endblock %}
