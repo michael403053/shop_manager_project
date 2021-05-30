@@ -2,6 +2,7 @@ from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.product import Product
 import repositories.products_repository as product_repository
+import repositories.reciept_repository as reciept_repository
 import repositories.manufacturers_repository as manufacturer_repository
 
 products_blueprint = Blueprint("products", __name__)
@@ -16,9 +17,9 @@ def products():
 # SHOW
 @products_blueprint.route("/products/<id>")
 def show_product(id):
-    victims = product_repository.select_victims_of_product(id)
+    reciept = reciept_repository.select_product_of_reciept(id)
     product = product_repository.select(id)
-    return render_template("products/show.html", victims=victims, product=product)
+    return render_template("products/show.html", reciepts=reciepts, product=product)
 
 
 # NEW

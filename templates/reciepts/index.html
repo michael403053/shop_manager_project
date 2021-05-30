@@ -1,22 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>reciepts</h2>
+<h2>Reciepts</h2>
 
-{% for reciept in reciepts %}
-
-<section>
-    <p>{{ reciept.product.name }} sold by {{ reciept.staff.name }}</p>
-    <p>at: {{reciept.time_stamp}}</p> 
-    <p>amount: {{reciept.quantity}}</p>
-    <p>price: {{reciept.quantity * reciept.product.sell_price}}</p>
-    <a href="/reciepts/{{ reciept.id }}/edit">Edit</a>
-    <form action="/reciepts/{{ reciept.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-</section>
-
-{% endfor %}
+<div class="loop_container">
+    {% for reciept in reciepts %}
+    <div class="list_container">
+        <section >
+            <ul class="view_list">
+                <li><p id="reciept_product">{{reciept.quantity}}x <a href="/products/{{ reciept.product.id }}" class="product_tag">{{reciept.product.name}}</a></p></li>
+                <li><p id="reciept_time_stamp">{{reciept.time_stamp}}</p></li>
+                <li><p id="reciept_staff_name">{{reciept.staff.name}}</p></li>
+                <li><p id="reciept_price">£{{reciept.quantity * reciept.product.sell_price}}</p></li>
+                <li><div class = "edit_container">
+                    <a href="/reciepts/{{ reciept.id }}/edit" id="reciept_edit">Edit</a>
+                </div></li>
+                <li><div class="delete_container">
+                    <form action="/reciepts/{{ reciept.id }}/delete" method="POST">
+                        <input type="submit" value="Delete" id="reciept_delete">
+                    </form>
+                </div></li>
+            </ul>
+        </section>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
 <a href="/reciepts/new" class="add_new">
 <img src="static/plus.png" class="plus_logo" alt="plus">
 </a>

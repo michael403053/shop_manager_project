@@ -49,12 +49,3 @@ def update(product):
     run_sql(sql, values)
 
 
-# def select_staff_of_product(id):
-#     staff = []
-#     sql = "SELECT staff.* FROM staff INNER JOIN reciepts ON reciepts.staff_id = staff.id WHERE reciepts.product_id = %s"
-#     values = [id]
-#     results = run_sql(sql, values)
-#     for result in results:
-#         new_staff = Staff(result["name"])
-#         staff.append(new_staff)
-#     return staff

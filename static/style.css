@@ -3,11 +3,61 @@ body {
 }
 
 h1, h2, p, a, li {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #000000
+    font-family: 'work sans', sans serif;
+    color: #000000;
+    font-size: 20px;
+    text-decoration: none;
 }
 
-.menu {
+h2 {
+    position: fixed;    
+    right: 5%;  
+    font-size: 40px;  
+    margin-top: 13px;
+}
+
+hr {
+    height: 1px;
+    background-color: skyblue;
+    border: none;
+}
+
+.product_tag {
+    color: skyblue;
+    font-size: 24px;
+}
+
+
+
+
+/* #reciept_time_stamp {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#reciept_staff_name {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#reciept_price {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#reciept_edit {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#reciept_delete {
+    grid-column: 3;
+    grid-row: 2;
+
+} */
+    
+
+/* .menu {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -15,10 +65,10 @@ h1, h2, p, a, li {
     padding-top: 5px;
     padding-bottom: 5px;
     list-style: none;
-}
+} */
 
 a:active {
-    color: #f9dfdc;
+    background-color: white;
 }
 
 .add_new {
@@ -35,7 +85,181 @@ a:active {
 
 .plus_logo {
     position: relative;
-    bottom: 13.5%;
-    right: 13.5%;
+    bottom: 14%;
+    right: 14%;
 }
 
+#menuToggle {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 25px;
+    left: 25px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+
+  }
+  
+  #menuToggle input
+  {
+    display: flex;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  #menuToggle span
+  {
+    display: flex;
+    width: 50px;
+    height: 5px;
+    margin-bottom: 5px;
+    
+    position: relative;
+    background: skyblue;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+  
+  
+  /* #menuToggle span:first-child
+  {
+    transform-origin: 0% 0%;
+  }
+  
+  #menuToggle span:nth-last-child(2)
+  {
+    transform-origin: 0% 100%;
+  } */
+  
+  /* #menuToggle input:checked ~ span
+  {
+    opacity: 1;
+    transform: rotate(45deg) translate(-3px, -1px);
+    background: #36383F;
+  }
+  #menuToggle input:checked ~ span:nth-last-child(3)
+  {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  
+  #menuToggle input:checked ~ span:nth-last-child(2)
+  {
+    transform: rotate(-45deg) translate(0, -1px);
+  } */
+  
+  #menu
+  {
+    position: absolute;
+    width: 120px;
+    height: 330px;
+    box-shadow: 0 0 10px #85888C;
+    margin: -50px 0 0 -50px;
+    padding: 50px;
+    padding-top: 100px;
+    background-color: #F5F6FA;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    list-style: none;
+  }
+  
+  header {
+    position: fixed;
+  }
+  
+  
+  
+  #menu li
+  {
+    padding: 15px 0;
+    margin: 5px;
+    transition-delay: 2s;
+    
+  }
+
+  #menu a
+  {
+    padding: 15px 5px;
+    transition-delay: 2s;
+    text-decoration: none;
+  }
+  #menu a:active
+  {
+    background-color: white;
+  }
+  
+  #menuToggle input:checked ~ ul
+  {
+    transform: none;
+  }
+
+  .loop_container {
+      padding-top: 70px;
+      padding-left: 25px;
+      padding-right: 25px;
+  }
+
+
+#reciept_product {
+    
+    z-index: -1;
+    
+}
+
+/* #reciept_time_stamp {
+    z-index: -1;
+    position: absolute;
+    margin-bottom: 0;
+    margin-top: -5%;
+}
+
+#reciept_staff_name {
+    margin-bottom: -4%;
+    margin-top: 0;
+    color: rgb(141, 140, 140)
+}
+
+#reciept_price {
+    position:absolute;
+    margin-left: 80%;
+}
+
+#reciept_edit {
+    position: absolute;
+    margin-top: -12%;
+    margin-left: 1%;
+    margin-bottom: 5%;
+    z-index: -1;
+}
+
+#reciept_delete {
+    position: absolute;
+    margin-left: 15%;
+    margin-top: -11%;
+    z-index: -1;
+    
+} */
+
+.view_list {
+
+    display:flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    list-style: none;
+}
+
+#reciept_price {
+    align-self: flex-end;
+}

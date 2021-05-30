@@ -3,9 +3,11 @@
 
 <h2>Manufacturers</h2>
 
+<div class="loop_container">
+
 {% for manufacturer in manufacturers %}
 
-<section>
+<section class="view_list">
     <p>{{manufacturer.name}}</p>
     <p>{{manufacturer.contact}}</p>
     <a href="/manufacturers/{{ manufacturer.id }}/edit">Edit</a>
@@ -16,5 +18,8 @@
 </section>
 
 {% endfor %}
-<a href="/manufacturers/new" class="add_new"></a>
+</div>
+<a href="/manufacturers/new" class="add_new">
+    <img src="static/plus.png" class="plus_logo" alt="plus">
+    </a>
 {% endblock %}

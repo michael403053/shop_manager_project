@@ -2,10 +2,10 @@
 {% block content %}
 
 <h2>Staff</h2>
-
+<div class="loop_container">
 {% for staff in staff %}
 
-<section>
+<section class="view_list">
     <p>{{staff.name}}</p>
     <a href="/staff/{{ staff.id }}/edit">Edit</a>
     <form action="/staff/{{ staff.id }}/delete" method="POST">
@@ -14,5 +14,8 @@
 </section>
 
 {% endfor %}
-<a href="/staff/new" class="add_new"></a>
+</div>
+<a href="/staff/new" class="add_new">
+    <img src="static/plus.png" class="plus_logo" alt="plus">
+    </a>
 {% endblock %}

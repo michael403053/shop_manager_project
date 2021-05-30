@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>products</h2>
-
+<h2>Products</h2>
+<div class="loop_container">
 {% for product in products %}
 
-<section>
+<section class="view_list">
     <p>{{product.name}}</p>
     <p>{{product.description}}</p>
     <p>{{product.stock_quantity}}</p>
@@ -19,5 +19,8 @@
 </section>
 
 {% endfor %}
-<a href="/products/new" class="add_new"></a>
+</div>
+<a href="/products/new" class="add_new">
+    <img src="static/plus.png" class="plus_logo" alt="plus">
+    </a>
 {% endblock %}
