@@ -2,7 +2,7 @@ body {
     background-color: #ffffff;
 }
 
-h1, h2, p, a, li {
+h1, h2, p, a, li, .form_label {
     font-family: 'work sans', sans serif;
     color: #000000;
     font-size: 20px;
@@ -152,6 +152,7 @@ a:active {
     flex-flow: column wrap;
     grid-column: 1 / 2;
     grid-row: 1;
+    margin-left: 20px;
 }
 
 #product_control {
@@ -178,10 +179,12 @@ a:active {
 .staff_name{
     grid-column: 1 / 2;
     grid-row: 1;
+    margin-left: 20px;
 }
 .staff_control{
     grid-column: 3;
     grid-row: 1;
+    margin-left: 20px;
 }
 
 .manufacturer_container{
@@ -273,11 +276,17 @@ a:active {
 }
 
 
-
-
 .control_list > li{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     margin-top: 10px;
+}
+
+.reciepts_form {
+    margin-top: 80px;
+}
+
+.form_item_container {
+    height: 100px;
 }

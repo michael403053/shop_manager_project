@@ -3,42 +3,46 @@
 
 <h2>New reciept</h2>
 
-<form action="/reciepts" method="POST">
-    <div>
-        <label for="product">product:</label>
-        <select name="product_id" id="product">
-            {% for product in products %}
-            <option value="{{ product.id }}">
-                {{ product.name }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    
-    <div>
-        <label for="staff">staff:</label>
-        <select name="staff_id" id="staff">
-            {% for staff in staffs %}
-            <option value="{{ staff.id }}">
-                {{ staff.name }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    
-    <div>
-        <label for="time_stamp">Time:</label>
-        <input type="text" name="time_stamp" id="time_stamp">
-    </div>
+<br>
+<div class="reciepts_form">
+    <hr>
+    <form action="/reciepts" method="POST">
+        <div class="form_item_container">
+            <label for="product" class="form_label">Product:</label>
+            <select name="product_id" id="product">
+                {% for product in products %}
+                <option value="{{ product.id }}">
+                    {{ product.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form_item_container">
+            <label for="staff" class="form_label">Staff:</label>
+            <select name="staff_id" id="staff">
+                {% for staff in staffs %}
+                <option value="{{ staff.id }}">
+                    {{ staff.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form_item_container">
+            <label for="time_stamp" class="form_label">Time:</label>
+            <input type="text" name="time_stamp" id="time_stamp">
+        </div>
 
-    <div>
-        <label for="quantity">Quantity:</label>
-        <input type="number" name="quantity" id="quantity">
-    </div>
+        <div class="form_item_container">
+            <label for="quantity" class="form_label">Quantity:</label>
+            <input type="number" name="quantity" id="quantity">
+        </div>
 
-    <div>
-        <input type="submit">
-    </div>
-</form>
-
+        <div>
+            
+            <button type="submit"><i class="fa fa-check" aria-hidden="true"></i></button>
+        </div>
+    </form>
+</div>
 {% endblock %}
