@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>editreciept</h2>
+<h2>Edit Reciept</h2>
+<br>
 
+<div class="reciepts_form">
 <form action="/reciepts/{{ reciept.id }}" method="POST">
-    <div>
-        <label for="product">product:</label>
-        <select name="product_id" id="product">
+    <hr>
+    <div class="form_item_container">
+        <label for="product" class="form_label">Product:</label><br>
+        <select name="product_id" id="product" class="form_select">
             {% for product in products %}
             <option value="{{ product.id }}" {% if product.id == reciept.product.id %} selected {% endif %}>
                 {{ product.name }}
@@ -15,9 +18,9 @@
         </select>
     </div>
     
-    <div>
-        <label for="staff">staff:</label>
-        <select name="staff_id" id="staff">
+    <div class="form_item_container">
+        <label for="staff" class="form_label">Staff:</label><br>
+        <select name="staff_id" id="staff" class="form_select">
             {% for staff in staffs %}
             <option value="{{ staff.id }}" {% if staff.id == reciept.staff.id %} selected {% endif %}>
                 {{ staff.name }}
@@ -26,19 +29,20 @@
         </select>
     </div>
     
-    <div>
-        <label for="time_stamp">Time:</label>
-        <input type="text" name="time_stamp" id="time_stamp" value="{{ reciept.time_stamp }}">
+    <div class="form_item_container">
+        <label for="time_stamp" class="form_label">Time:</label><br>
+        <input type="text" name="time_stamp" id="time_stamp" value="{{ reciept.time_stamp }}" class="form_input" required>
     </div>
 
-    <div>
-        <label for="quantity">Quantity:</label>
-        <input type="number" name="quantity" id="quantity" value="{{reciept.quantity}}">
+    <div class="form_item_container">
+        <label for="quantity" class="form_label">Quantity:</label><br>
+        <input type="number" name="quantity" id="quantity" value="{{reciept.quantity}}" class="form_input" required>
     </div>
 
-    <div>
-        <input type="submit">
+    <div class="form_item_container">
+        <button type="submit" class="form_submit"><i class="fa fa-check fa-3x" aria-hidden="true" style="color:skyblue;"></i></button>
     </div>
 </form>
+</div>
 
 {% endblock %}

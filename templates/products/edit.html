@@ -3,30 +3,32 @@
 
 <h2>Edit Product</h2>
 
+<br>
+<div class="reciepts_form">
 <form action="/products/{{ product.id }}" method="POST">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{product.name}}">
+    <div class="form_item_container">
+        <label for="name" class="form_label">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{product.name}}" class="form_input" required>
     </div>
-    <div>
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" value="{{product.description}}">
+    <div class="form_item_container">
+        <label for="description" class="form_label">Description:</label><br>
+        <input type="text" id="description" name="description" value="{{product.description}}" class="form_input" required>
     </div>
-    <div>
-        <label for="stock_quantity">stock_quantity:</label>
-        <input type="text" id="stock_quantity" name="stock_quantity" value="{{product.stock_quantity}}">
+    <div class="form_item_container">
+        <label for="stock_quantity" class="form_label">stock_quantity:</label><br>
+        <input type="text" id="stock_quantity" name="stock_quantity" value="{{product.stock_quantity}}" class="form_input" required>
     </div>
-    <div>
-        <label for="buy_price">buy_price:</label>
-        <input type="text" id="buy_price" name="buy_price" value="{{product.buy_price}}">
+    <div class="form_item_container">
+        <label for="buy_price" class="form_label">buy_price:</label><br>
+        <input type="text" id="buy_price" name="buy_price" value="{{product.buy_price}}" class="form_input" required>
     </div>
-    <div>
-        <label for="sell_price">sell_price:</label>
-        <input type="text" id="sell_price" name="sell_price" value="{{product.sell_price}}">
+    <div class="form_item_container">
+        <label for="sell_price" class="form_label">sell_price:</label><br>
+        <input type="text" id="sell_price" name="sell_price" value="{{product.sell_price}}" class="form_input" required>
     </div>
-    <div>
-        <label for="manufacturer">Manufacturer:</label>
-        <select name="manufacturer_id" id="manufacturer">
+    <div class="form_item_container">
+        <label for="manufacturer" class="form_label">Manufacturer:</label><br>
+        <select name="manufacturer_id" id="manufacturer" class="form_select">
             {% for manufacturer in manufacturers %}
             <option value="{{ manufacturer.id }}" {% if manufacturer.id == product.manufacturer.id %} selected {% endif %}>
                 {{ manufacturer.name }}
@@ -34,9 +36,11 @@
             {% endfor %}
         </select>
     </div>
-    <div>
-        <input type="submit">
+    <div class="form_item_container">
+        <button type="submit" class="form_submit"><i class="fa fa-check fa-3x" aria-hidden="true" style="color:skyblue;"></i></button>
     </div>
 </form>
+</div>
+
 
 {% endblock %}

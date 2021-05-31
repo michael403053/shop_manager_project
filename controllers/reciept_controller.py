@@ -1,5 +1,5 @@
 from flask import Blueprint, Flask, redirect, render_template, request
-
+import datetime
 from models.reciept import Reciept
 import repositories.reciept_repository as reciept_repository
 import repositories.products_repository as products_repository
@@ -19,7 +19,10 @@ def reciepts():
 def new_reciept():
     staffs = staff_repository.select_all()
     products = products_repository.select_all()
-    return render_template("reciepts/new.html", staffs=staffs, products=products)
+    date_time = datetime.datetime.now()
+    time_stamp = date_time.strftime("%X")
+    print(date_time.strftime("%X"))
+    return render_template("reciepts/new.html", staffs=staffs, products=products, time_stamp=time_stamp)
 
 
 # CREATE

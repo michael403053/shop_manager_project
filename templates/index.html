@@ -1,14 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
 
-This will be the home page. Depending on our UX we might have a dashboard here showing some stats for example.
+<h2>Home</h2>
 
-{%for reciept in reciepts%}
+<br><br><br>
+{% set total_markup = 0 %}
+{% set count = 0 %}
+
+{% for reciept in all_reciepts %}
+{% if loop.index <= 3 %}
+
+
 
 <section>
-    <p>{{ (reciept.product.sell_price - reciept.product.buy_price) * reciept.quantity }}</p>
+    <p>{{reciept.quantity}} x {{ reciept.product.name }}</p>
+    <p>Markup:<br>£{{ (reciept.product.sell_price - reciept.product.buy_price) * reciept.quantity }}</p>
+
+    {% set total_markup = total_markup + ((reciept.product.sell_price - reciept.product.buy_price) * reciept.quantity) %}
+    {{total_markup}}
+    {%set count = count + 1%}
+    {{count}}
 </section>
 
+
+
+{% endif %}
 {% endfor %}
+
+<hr>
+
+<p>Total Markup = {{ total_markup }}</p>
+<p>Count = {{count}}</p>
+
+
+<hr>
+
+
+{% for staff in all_staff %}
+
+<section>
+    <p>{{staff.name}}</p>
+</section>
+
+{%endfor%}
+
+
+<hr> 
+
+
+{% for product in all_products %}
+
+<section>
+    <p>{{product.name}} £{{product.sell_price}}</p>
+</section>
+
+{%endfor%}
 
 {% endblock %}

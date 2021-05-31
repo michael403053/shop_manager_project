@@ -9,11 +9,14 @@ h1, h2, p, a, li, .form_label {
     text-decoration: none;
 }
 
+
+
 h2 {
     position: fixed;    
     right: 5%;  
     font-size: 40px;  
     margin-top: 13px;
+    width: 280px;
 }
 
 hr {
@@ -164,16 +167,34 @@ a:active {
 }
 
 #product_info > p {
-    height: 30px;
+    height: 10px;
 
 }
 
 .product_container{
     display: grid;
-    
+    margin-bottom: 50px;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);  
+}
+
+.product_container_low_stock{
+    display: grid;
+    background-color: rgba(255, 255, 49, 0.453);
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);  
+    height: 350px;
+}
+
+.product_container_no_stock{
+    display: grid;
+    background-color: rgba(255, 0, 0, 0.364);
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);  
+    height: 350px;
 }
 
 .staff_name{
@@ -269,7 +290,7 @@ a:active {
     width: 40px;
     height: 40px;
     border-color: transparent;
-    background-color: white;
+    background-color: transparent;
 }
 #reciept_edit_button{
     margin-top: 10px;
@@ -290,3 +311,21 @@ a:active {
 .form_item_container {
     height: 100px;
 }
+.form_select, .form_input {
+    font-family: 'work sans', sans serif;
+    font-size: 20px;
+}
+.form_submit{
+    background-color: white;
+    border-color: transparent;
+}
+
+#contact {
+    
+    padding-bottom: 100px;
+}
+
+#manu_submit, #edit_manu_submit{
+    margin-top: 100px;
+}
+

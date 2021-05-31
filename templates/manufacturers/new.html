@@ -2,19 +2,24 @@
 {% block content %}
 
 <h2>New Manufacturer</h2>
+<br>
+<div class="reciepts_form">
+    <hr>
 
 <form action="/manufacturers" method="POST">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+    <div class="form_item_container">
+        <label for="name" class="form_label">Name:</label><br>
+        <input type="text" id="name" name="name" class="form_input" required>
     </div>
-    <div>
-        <label for="contact">Contact:</label>
-        <input type="text" id="contact" name="contact">
+    <div class="form_item_container">
+        <label for="contact" class="form_label">Contact:</label><br>
+        <input type="text" id="contact" name="contact" class="form_input" required>
     </div>
-    <div>
-        <input type="submit">
+    <div class="form_item_container">
+        <button type="submit" class="form_submit" id="manu_submit"><i class="fa fa-check fa-3x" aria-hidden="true" style="color:skyblue;"></i></button>
     </div>
 </form>
+
+</div>
 
 {% endblock %}

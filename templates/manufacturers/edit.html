@@ -2,19 +2,22 @@
 {% block content %}
 
 <h2>Edit Manufacturer</h2>
-
+<br>
+<div class="reciepts_form">
 <form action="/manufacturers/{{ manufacturer.id }}" method="POST">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{manufacturer.name}}">
+    <hr>
+    <div class="form_item_container">
+        <label for="name" class="form_label">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{manufacturer.name}}" class="form_input" required>
     </div>
-    <div>
-        <label for="contact">Contact:</label>
-        <input type="text" id="contact" name="contact" value="{{manufacturer.contact}}">
+    <div class="form_item_container">
+        <label for="contact" class="form_label">Contact:</label><br>
+        <input type="text" id="contact" name="contact" value="{{manufacturer.contact}}" class="form_input" required>
     </div>
-    <div>
-        <input type="submit">
+    <div class="form_item_container">
+        <button type="submit" class="form_submit" id="edit_manu_submit"><i class="fa fa-check fa-3x" aria-hidden="true" style="color:skyblue;"></i></button>
     </div>
 </form>
+</div>
 
 {% endblock %}

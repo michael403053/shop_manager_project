@@ -3,12 +3,22 @@
 
 <h2>New Staff</h2>
 
+<br>
+
+<div class="reciepts_form">
+    <hr>
 <form action="/staff" method="POST">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-        <input type="submit">
+    <div class="form_item_container">
+        <label for="name" class="form_label">Name:</label>
+        <input type="text" id="name" name="name" class="form_input" required>
     </div>
+    <div class="form_item_container">
+        <button type="submit" class="form_submit"><i class="fa fa-check fa-3x" aria-hidden="true" style="color:skyblue;"></i></button>
+
+    </div>
+        
+    
 </form>
+</div>
 
 {% endblock %}
