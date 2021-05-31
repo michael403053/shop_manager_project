@@ -29,44 +29,6 @@ hr {
 
 
 
-
-/* #reciept_time_stamp {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-#reciept_staff_name {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-#reciept_price {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-#reciept_edit {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-#reciept_delete {
-    grid-column: 3;
-    grid-row: 2;
-
-} */
-    
-
-/* .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: skyblue;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    list-style: none;
-} */
-
 a:active {
     background-color: white;
 }
@@ -88,6 +50,7 @@ a:active {
     bottom: 14%;
     right: 14%;
 }
+
 
 #menuToggle {
     display: flex;
@@ -130,33 +93,7 @@ a:active {
   }
   
   
-  /* #menuToggle span:first-child
-  {
-    transform-origin: 0% 0%;
-  }
-  
-  #menuToggle span:nth-last-child(2)
-  {
-    transform-origin: 0% 100%;
-  } */
-  
-  /* #menuToggle input:checked ~ span
-  {
-    opacity: 1;
-    transform: rotate(45deg) translate(-3px, -1px);
-    background: #36383F;
-  }
-  #menuToggle input:checked ~ span:nth-last-child(3)
-  {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-  }
-  
-  #menuToggle input:checked ~ span:nth-last-child(2)
-  {
-    transform: rotate(-45deg) translate(0, -1px);
-  } */
-  
+
   #menu
   {
     position: absolute;
@@ -206,60 +143,141 @@ a:active {
 
   .loop_container {
       padding-top: 70px;
-      padding-left: 25px;
+      padding-left: 0px;
       padding-right: 25px;
   }
 
+#product_info {
+    display: flex;
+    flex-flow: column wrap;
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
 
-#reciept_product {
+#product_control {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+}
+
+#product_info > p {
+    height: 30px;
+
+}
+
+.product_container{
+    display: grid;
     
-    z-index: -1;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);  
+}
+
+.staff_name{
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+.staff_control{
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.manufacturer_container{
+    display: grid;
     
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
 }
 
-/* #reciept_time_stamp {
-    z-index: -1;
-    position: absolute;
-    margin-bottom: 0;
-    margin-top: -5%;
+#reciept_product {   
+    z-index: -1;    
 }
 
-#reciept_staff_name {
-    margin-bottom: -4%;
-    margin-top: 0;
-    color: rgb(141, 140, 140)
-}
 
-#reciept_price {
-    position:absolute;
-    margin-left: 80%;
-}
-
-#reciept_edit {
-    position: absolute;
-    margin-top: -12%;
-    margin-left: 1%;
-    margin-bottom: 5%;
-    z-index: -1;
-}
-
-#reciept_delete {
-    position: absolute;
-    margin-left: 15%;
-    margin-top: -11%;
-    z-index: -1;
-    
-} */
-
-.view_list {
-
+.view_list, .control_list{
     display:flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-wrap: wrap;
     list-style: none;
 }
 
-#reciept_price {
-    align-self: flex-end;
+.view_list{
+    padding: 0px 0px 0px 10px;
+    height: 150px;
+}
+
+.list_container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);    
+}
+
+.reciept_info_section {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+.reciept_price_section{
+    grid-column: 3;
+    grid-row: 1;
+    margin-top: 100px;
+}
+
+  
+
+.reciept_price_section > ul {
+    list-style: none;
+}
+    
+
+
+
+#reciept_time_stamp, #reciept_staff_name{
+    flex: 1 0 34%; 
+    margin: 5px;
+    width: 140px;
+    /* background-color: blue; */
+}
+
+/* MEDIA QUEREY MOBILE */
+
+@media screen and (max-width: 600px) {
+#reciept_product{
+    flex: 1 0 34%; 
+    margin: 5px;
+    width: 140px;
+}
+}
+@media screen and (min-width: 600px) {
+#reciept_product{
+    flex: 1 0 34%; 
+    margin: 5px;
+    width: 300px;
+}
+}
+
+
+#reciept_edit, #reciept_delete, #reciept_edit_button{
+    
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-color: transparent;
+    background-color: white;
+}
+#reciept_edit_button{
+    margin-top: 10px;
+}
+
+
+
+
+.control_list > li{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 10px;
 }

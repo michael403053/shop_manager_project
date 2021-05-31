@@ -2,21 +2,27 @@
 {% block content %}
 
 <h2>Products</h2>
+
 <div class="loop_container">
 {% for product in products %}
-
-<section class="view_list">
-    <p>{{product.name}}</p>
+<hr>
+<div class="product_container">
+<section id="product_info">
+    <p class="product_tag">{{product.name}}</p>
     <p>{{product.description}}</p>
-    <p>{{product.stock_quantity}}</p>
-    <p>{{product.buy_price}}</p>
-    <p>{{product.sell_price}}</p>
-    <p>{{product.manufacturer.name}}</p>
-    <a href="/products/{{ product.id }}/edit">Edit</a>
+    <p>Stock: {{product.stock_quantity}}</p>
+    <p>Buy Price: {{product.buy_price}}</p>
+    <p>Sell Price: {{product.sell_price}}</p>
+    <p>Manufacturer: {{product.manufacturer.name}}</p> 
+</section>
+<section id="product_control">
+<a href="/products/{{ product.id }}/edit"><i class="fa fa-pencil-square-o fa-2x" style="color:skyblue" aria-hidden="true" id="reciept_edit_button"></i></a>
     <form action="/products/{{ product.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+        <button id="reciept_delete"></i><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
     </form>
 </section>
+</div>
+
 
 {% endfor %}
 </div>

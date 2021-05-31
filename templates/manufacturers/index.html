@@ -6,16 +6,21 @@
 <div class="loop_container">
 
 {% for manufacturer in manufacturers %}
-
-<section class="view_list">
+<hr>
+<div class="manufacturer_container">
+<div class="staff_name">
+<section class="manufacturers_list">
     <p>{{manufacturer.name}}</p>
     <p>{{manufacturer.contact}}</p>
-    <a href="/manufacturers/{{ manufacturer.id }}/edit">Edit</a>
+</div>
+<div class="staff_control">
+    <a href="/manufacturers/{{ manufacturer.id }}/edit"><i class="fa fa-pencil-square-o fa-2x" style="color:skyblue" aria-hidden="true" id="reciept_edit_button"></i></a>
     <form action="/manufacturers/{{ manufacturer.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+        <button id="reciept_delete"></i><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
     </form>
-    
+</div>
 </section>
+</div>
 
 {% endfor %}
 </div>

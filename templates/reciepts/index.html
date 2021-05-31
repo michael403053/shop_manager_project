@@ -6,20 +6,29 @@
 <div class="loop_container">
     {% for reciept in reciepts %}
     <div class="list_container">
-        <section >
+        <section class="reciept_info_section">
             <ul class="view_list">
                 <li><p id="reciept_product">{{reciept.quantity}}x <a href="/products/{{ reciept.product.id }}" class="product_tag">{{reciept.product.name}}</a></p></li>
                 <li><p id="reciept_time_stamp">{{reciept.time_stamp}}</p></li>
                 <li><p id="reciept_staff_name">{{reciept.staff.name}}</p></li>
-                <li><p id="reciept_price">£{{reciept.quantity * reciept.product.sell_price}}</p></li>
-                <li><div class = "edit_container">
-                    <a href="/reciepts/{{ reciept.id }}/edit" id="reciept_edit">Edit</a>
-                </div></li>
-                <li><div class="delete_container">
-                    <form action="/reciepts/{{ reciept.id }}/delete" method="POST">
-                        <input type="submit" value="Delete" id="reciept_delete">
-                    </form>
-                </div></li>
+            </ul>
+            
+        </section>
+        <ul class="control_list">
+            <li><div class = "edit_container">
+                <a href="/reciepts/{{ reciept.id }}/edit" id="reciept_edit"><i class="fa fa-pencil-square-o fa-2x" style="color:skyblue" aria-hidden="true" id="reciept_edit_button"></i>
+                </a>
+            </div></li>
+            <li><div class="delete_container">
+                <form action="/reciepts/{{ reciept.id }}/delete" method="POST">
+                    <button id="reciept_delete"></i><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
+                    
+                </form>
+            </div></li>
+        </ul>
+        <section class="reciept_price_section">
+            <ul>
+            <li><p id="reciept_price">£{{reciept.quantity * reciept.product.sell_price}}</p></li>
             </ul>
         </section>
     </div>
