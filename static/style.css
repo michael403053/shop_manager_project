@@ -330,8 +330,8 @@ a:active {
 }
 
 .home_reciept_container{
-    height: 300px;
-    width: 400px;
+    height: 200px;
+    width: 380px;
     overflow:scroll;
     border-style: solid;
     border-color: skyblue;
@@ -341,15 +341,15 @@ a:active {
     
 }
 .home_staff_container{
-    height: 200px;
-    width: 400px;
+    height: 150px;
+    width: 380px;
     overflow:scroll;
     border-style: solid;
     border-color: skyblue;
     border-width: 2px;
     padding: 5px;
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .home_flex_container{
@@ -360,5 +360,5 @@ a:active {
 
 .markup_text {
     padding: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
 }

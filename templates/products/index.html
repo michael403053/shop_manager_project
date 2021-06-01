@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Products</h2>
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Products</h2>
 
 <div class="loop_container">
     {% for product in products %}
@@ -14,6 +14,7 @@
     <div class="product_container_low_stock">
     {% endif %}    
         
+ 
    
         <section id="product_info">
             <p class="product_tag"><a href="/products/{{ product.id }}" class="product_tag">{{product.name}}</a></p>

@@ -11,7 +11,8 @@ products_blueprint = Blueprint("products", __name__)
 @products_blueprint.route("/products")
 def products():
     products = product_repository.select_all()
-    return render_template("products/index.html", products=products)
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("products/index.html", products=products, manufacturers=manufacturers)
 
 
 # SHOW
