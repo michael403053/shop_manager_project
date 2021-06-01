@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Products</h2>
+<h2>Product</h2>
 
 <div class="loop_container">
-    {% for product in products %}
+ 
     <hr>
     {% if product.stock_quantity >= 10%}
     <div class="product_container">
@@ -16,7 +16,7 @@
         
    
         <section id="product_info">
-            <p class="product_tag"><a href="/products/{{ product.id }}" class="product_tag">{{product.name}}</a></p>
+            <p class="product_tag">{{product.name}}</p>
             <p style="color:rgb(54, 64, 68)">"{{product.description}}"</p>
             <p style="color:rgb(54, 64, 68)">Stock: {{product.stock_quantity}}</p>
             <p style="color:rgb(54, 64, 68)">Buy Price: {{product.buy_price}}</p>
@@ -32,9 +32,11 @@
     </div>
 
 
-    {% endfor %}
+
 </div>
 <a href="/products/new" class="add_new">
-    <img src="static/plus.png" class="plus_logo" alt="plus">
+    <img src="../static/plus.png" class="plus_logo" alt="plus">
 </a>
+
+
 {% endblock %}

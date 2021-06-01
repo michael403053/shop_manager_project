@@ -22,7 +22,8 @@ def new_staff():
 @staff_blueprint.route("/staff", methods=["POST"])
 def create_staff():
     name = request.form["name"]
-    new_staff = Staff(name)
+    shift = request.form["shift"]
+    new_staff = Staff(name, shift)
     staff_repository.save(new_staff)
     return redirect("/staff")
 
@@ -38,6 +39,7 @@ def edit_staff(id):
 @staff_blueprint.route("/staff/<id>", methods=["POST"])
 def update_staff(id):
     name = request.form["name"]
+    shift = request.form["shift"]
     staff = Staff(name, id)
     staff_repository.update(staff)
     return redirect('/staff')

@@ -3,57 +3,63 @@
 
 <h2>Home</h2>
 
-<br><br><br>
-{% set total_markup = 0 %}
-{% set count = 0 %}
-
-{% for reciept in all_reciepts %}
-{% if loop.index <= 3 %}
-
-
-
-<section>
-    <p>{{reciept.quantity}} x {{ reciept.product.name }}</p>
-    <p>Markup:<br>£{{ (reciept.product.sell_price - reciept.product.buy_price) * reciept.quantity }}</p>
-
-    {% set total_markup = total_markup + ((reciept.product.sell_price - reciept.product.buy_price) * reciept.quantity) %}
-    {{total_markup}}
-    {%set count = count + 1%}
-    {{count}}
-</section>
-
-
-
-{% endif %}
-{% endfor %}
-
+<br><br><br><br>
 <hr>
+<div class="home_flex_container">
+    <div class="home_reciept_container">
+        <h3>Today's Transactions</h3>
+        <hr>
 
-<p>Total Markup = {{ total_markup }}</p>
-<p>Count = {{count}}</p>
+        {% for reciept in all_reciepts %}
+        
 
+        <section>
 
-<hr>
+            <p>{{reciept.quantity}} x <a href="/products/{{ reciept.product.id }}" class="product_tag">{{reciept.product.name}}</a></p>
+            <p>Markup:<br>£{{ (reciept.product.sell_price - reciept.product.buy_price) * reciept.quantity }}</p>
 
+        </section>
+        <hr>
 
-{% for staff in all_staff %}
+        {% endfor %}
+    </div>
 
-<section>
-    <p>{{staff.name}}</p>
-</section>
+    
+   
 
-{%endfor%}
+    <div class="home_staff_container">
+        <h3>Staff</h3>
+        <hr>
+        {% for staff in all_staff %}
 
+        <section>
+            <p>{{staff.name}}</p>
+            <p>£{{"{:.2f}".format((staff.shift * 9.70))}}</p>
+        </section>
+        <hr>
 
-<hr> 
+        {%endfor%}
+    </div>
 
+</div>
 
+<div class="markup_text">
+<p>Total Product Markup = £{{"{:.2f}".format(total_markup) }}</p>
+<p>Total Staff Wages = £{{total_wages}}</p>
+
+    <hr>
+
+ <p>Turnover = <b>£{{"{:.2f}".format(total_markup - total_wages)}}</b></p>
+
+</div>
+
+<!-- <h3>Menu</h3>
 {% for product in all_products %}
 
 <section>
     <p>{{product.name}} £{{product.sell_price}}</p>
 </section>
 
-{%endfor%}
+{%endfor%} -->
 
 {% endblock %}
