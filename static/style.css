@@ -9,8 +9,6 @@ h1, h2, h3, p, a, li, .form_label {
     text-decoration: none;
 }
 
-
-
 h2 {
     position: fixed;    
     right: 5%;  
@@ -29,8 +27,6 @@ hr {
     color: skyblue;
     font-size: 24px;
 }
-
-
 
 a:active {
     background-color: white;
@@ -64,11 +60,9 @@ a:active {
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
-
-  }
+}
   
-  #menuToggle input
-  {
+#menuToggle input {
     display: flex;
     width: 40px;
     height: 32px;
@@ -76,15 +70,13 @@ a:active {
     cursor: pointer;
     opacity: 0;
     z-index: 2;
-  }
+}
   
-  #menuToggle span
-  {
+#menuToggle span {
     display: flex;
     width: 50px;
     height: 5px;
-    margin-bottom: 5px;
-    
+    margin-bottom: 5px;    
     position: relative;
     background: skyblue;
     border-radius: 3px;
@@ -93,12 +85,9 @@ a:active {
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                 background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                 opacity 0.55s ease;
-  }
-  
-  
+  } 
 
-  #menu
-  {
+#menu {
     position: absolute;
     width: 120px;
     height: 330px;
@@ -112,43 +101,37 @@ a:active {
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     list-style: none;
-  }
+}
   
-  header {
+header {
     position: fixed;
-  }
+}
   
-  
-  
-  #menu li
-  {
+#menu li {
     padding: 15px 0;
     margin: 5px;
     transition-delay: 2s;
-    
-  }
+}
 
-  #menu a
-  {
+#menu a {
     padding: 15px 5px;
     transition-delay: 2s;
     text-decoration: none;
-  }
-  #menu a:active
-  {
-    background-color: white;
-  }
+ }
   
-  #menuToggle input:checked ~ ul
-  {
+#menu a:active {
+    background-color: white;
+}
+  
+#menuToggle input:checked ~ ul {
     transform: none;
-  }
+}
 
-  .loop_container {
-      padding-top: 70px;
-      padding-left: 0px;
-      padding-right: 25px;
-  }
+.loop_container {
+    padding-top: 70px;
+    padding-left: 0px;
+    padding-right: 25px;
+}
 
 #product_info {
     display: flex;
@@ -220,7 +203,6 @@ a:active {
     z-index: -1;    
 }
 
-
 .view_list, .control_list{
     display:flex;
     flex-wrap: wrap;
@@ -248,22 +230,17 @@ a:active {
     grid-column: 3;
     grid-row: 1;
     margin-top: 100px;
-}
-
-  
+} 
 
 .reciept_price_section > ul {
     list-style: none;
 }
     
-
-
-
 #reciept_time_stamp, #reciept_staff_name{
     flex: 1 0 34%; 
     margin: 5px;
     width: 140px;
-    /* background-color: blue; */
+  
 }
 
 /* MEDIA QUEREY MOBILE */
@@ -284,18 +261,17 @@ a:active {
 }
 
 
-#reciept_edit, #reciept_delete, #reciept_edit_button{
-    
+#reciept_edit, #reciept_delete, #reciept_edit_button{    
     margin: 5px;
     width: 40px;
     height: 40px;
     border-color: transparent;
     background-color: transparent;
 }
+
 #reciept_edit_button{
     margin-top: 10px;
 }
-
 
 .control_list > li{
     display: flex;
@@ -320,8 +296,7 @@ a:active {
     border-color: transparent;
 }
 
-#contact {
-    
+#contact {    
     padding-bottom: 100px;
 }
 
@@ -337,9 +312,9 @@ a:active {
     border-color: skyblue;
     border-width: 2px;
     padding: 5px;
-    border-radius: 5px;
-    
+    border-radius: 5px;    
 }
+
 .home_staff_container{
     height: 150px;
     width: 380px;
