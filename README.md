@@ -1,3 +1,3 @@
 ## Shop Manager
 
-!preview image 1(https://github.com/mikey-sb/shop_manager_project/blob/main/static/p1.png?raw=true)
+<img width="374" alt="p1" src="https://user-images.githubusercontent.com/75737810/125615206-13beef9f-10c1-45cf-9129-122c95b217ff.png">
